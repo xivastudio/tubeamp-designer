@@ -22,7 +22,8 @@ pkgver() {
 
 build() {
 	cd "$srcdir/${pkgname%-*}"
-	meson setup builddir -Dladspa=disabled --prefix=/usr
+	meson setup builddir --prefix=/usr
+	#-Dladspa=disabled
 	ninja -C builddir
 }
 
